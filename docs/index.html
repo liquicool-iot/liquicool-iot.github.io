@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>默认标题</title>
+    <title id="pageTitle">立冷科技 - 数据中心液冷解决方案专家</title>
     <style>
         * {
             margin: 0;
@@ -12,90 +12,96 @@
         }
 
         body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background: #f0f2f5; /* 原来的背景颜色 */
-            font-family: Arial, sans-serif;
-        }
-
-        /* 更大的Logo容器 */
-        .logo-container {
-            width: 40vw;
-            max-width: 300px;
-            height: auto;
-            margin: 30px 0;
-        }
-
-        .logo {
-            width: 100%;
-            height: 100%;
-            animation: spin 1s linear 1 forwards;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(270deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* 动态省略号效果 */
-        .status-text {
-            font-size: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
             color: #333;
-            margin-bottom: 20px;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: blink 1s infinite;
         }
 
-        @keyframes blink {
-            50% { 
-                text-indent: 0.2em; 
-            }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* 下拉按钮样式 */
-        .dropbtn {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: white;
-            padding: 8px 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            width: 120px; /* 设置固定宽度 */
-            text-align: left;
-        }
-
-        .dropbtn:hover, .dropbtn:focus {
-            background-color: #3e8e41;
-        }
-
-        /* 容器 <div> - 需要定位下拉内容 */
-        .dropdown {
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            top: 20px;
-            right: 20px;
+            width: 100%;
+            top: 0;
             z-index: 1000;
         }
 
-        /* 下拉菜单内容 (隐藏) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        .logo-header img {
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+
+        /* Language Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background: #0066cc;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .dropbtn:hover {
+            background: #0052a3;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.4); /* 深色半透明背景，40%透明 */
-            color: white;
-            min-width: 120px; /* 设置与按钮相同的宽度 */
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            right: 0;
+            background: white;
+            min-width: 120px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 4px;
             z-index: 1;
         }
 
-        /* 下拉菜单项 */
         .dropdown-content button {
-            color: white;
+            color: #333;
             padding: 8px 16px;
             text-decoration: none;
             display: block;
@@ -107,146 +113,584 @@
         }
 
         .dropdown-content button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: #f1f1f1;
         }
 
-        /* 显示下拉菜单 (当用户悬停或点击时) */
-        .show {display: block;}
+        .show {
+            display: block;
+        }
 
-        /* 底部版权信息 */
-        .footer {
-            margin-top: auto;
-            padding: 20px 0;
-            width: 100%;
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 100px 0;
             text-align: center;
-            font-size: 14px;
-            color: #666;
-            background: #f0f2f5;
         }
 
-        .footer a {
-            color: #4CAF50;
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0066cc;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Technology Section */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-card h4 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .tech-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Awards Section */
+        .awards {
+            background: #f8f9fa;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .award-item h4 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h4 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #0066cc;
             text-decoration: none;
         }
 
-        .footer a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
 
-        /* 响应式调整 */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .logo-container {
-                width: 60vw;
-                max-width: 250px;
+            .nav-links {
+                display: none;
             }
-            .status-text {
-                font-size: 18px;
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .logo-container {
-                width: 70vw;
-                max-width: 200px;
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            section {
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Logo容器 -->
-    <div class="logo-container">
-        <img 
-            class="logo" 
-            src="logo.svg" 
-            alt="Logo" 
-            style="width: 100%; height: 100%; display: block;"
-        >
-    </div>
+    <header>
+        <nav class="container">
+            <div class="logo-header">
+                <img src="logo.svg" alt="立冷科技">
+                <span id="companyName">立冷科技</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" id="nav-home">首页</a></li>
+                <li><a href="#about" id="nav-about">公司简介</a></li>
+                <li><a href="#technology" id="nav-tech">核心技术</a></li>
+                <li><a href="#awards" id="nav-awards">荣誉奖项</a></li>
+                <li><a href="#contact" id="nav-contact">联系我们</a></li>
+            </ul>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="dropbtn">繁/简/EN ▼</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <button onclick="setLanguage('zh-CN')">简体中文</button>
+                    <button onclick="setLanguage('zh-TW')">繁體中文</button>
+                    <button onclick="setLanguage('en')">English</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <!-- 状态文字 -->
-    <div class="status-text" id="statusText">网页建设中...</div>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1 id="hero-title">数据中心液冷解决方案专家</h1>
+                <p id="hero-subtitle">专业的热管理技术，高效节能的冷却系统，为您的数据中心提供最佳解决方案</p>
+                <a href="#contact" class="cta-button" id="hero-cta">联系我们</a>
+            </div>
+        </section>
 
-    <!-- 语言切换按钮 -->
-    <div class="dropdown" id="langDropdown">
-        <button onclick="toggleDropdown()" class="dropbtn">繁/简/EN ▼</button>
-        <div id="myDropdown" class="dropdown-content">
-            <button onclick="setLanguage('zh-CN')">简体中文</button>
-            <button onclick="setLanguage('zh-TW')">繁體中文</button>
-            <button onclick="setLanguage('en')">English</button>
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" id="about-title">关于立冷科技</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 id="about-subtitle">专业的液冷技术团队</h3>
+                        <p id="about-text1">立冷科技由香港理工大学王钻开教授团队创立，专注于数据中心液冷解决方案的研发与应用。</p>
+                        <p id="about-text2">我们致力于为客户提供高效节能的热管理技术，通过创新的结构热铠甲技术，实现数据中心的智能化温控管理。</p>
+                        <p id="about-text3">我们的解决方案具有高能效比(PUE < 1.06)、高水效比(WUE < 0.5)和低碳排放的特点。</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4>PUE < 1.06</h4>
+                            <p id="stat1">高能效比</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>WUE < 0.5</h4>
+                            <p id="stat2">高水效比</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>AI + IoT</h4>
+                            <p id="stat3">智能监控</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology">
+            <div class="container">
+                <h2 class="section-title" id="tech-title">核心技术</h2>
+                <p class="section-subtitle" id="tech-subtitle">创新的液冷技术，为数据中心提供最优解决方案</p>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4 id="tech1-title">结构热铠甲技术</h4>
+                        <p id="tech1-desc">创新的热管理结构设计，提供卓越的散热性能，确保设备稳定运行。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4 id="tech2-title">液冷系统集成</h4>
+                        <p id="tech2-desc">完整的数据中心液冷解决方案，从设计到实施的一站式服务。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4 id="tech3-title">AI智能监控</h4>
+                        <p id="tech3-desc">集成AI和IoT系统，实现智能监控和性能调节，优化系统效率。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards" class="awards">
+            <div class="container">
+                <h2 class="section-title" id="awards-title">荣誉奖项</h2>
+                <p class="section-subtitle" id="awards-subtitle">国际认可的技术创新成果</p>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <h4 id="award1-title">2024年日本传热科学纪念奖</h4>
+                        <p id="award1-desc">表彰在传热科学领域的杰出贡献</p>
+                    </div>
+                    <div class="award-item">
+                        <h4 id="award2-title">2023年德国跨境基金会科学突破奖</h4>
+                        <p id="award2-desc">认可在科学技术突破方面的成就</p>
+                    </div>
+                    <div class="award-item">
+                        <h4 id="award3-title">2022年日内瓦国际发明展金奖</h4>
+                        <p id="award3-desc">国际发明领域的最高荣誉</p>
+                    </div>
+                    <div class="award-item">
+                        <h4 id="award4-title">第8届香港大学生创新创业大奖赛奖项</h4>
+                        <p id="award4-desc">青年创新创业的杰出表现</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title" id="contact-title">联系我们</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h4 id="contact-subtitle">立冷科技有限公司</h4>
+                        <p id="contact-desc">专业的数据中心液冷解决方案提供商</p>
+                        <p><strong id="contact-email-label">邮箱：</strong>yuchao.li@liquicool.hk</p>
+                        <p><strong id="contact-alt-label">备用邮箱：</strong>liquicool@outlook.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <h4 id="business-title">业务范围</h4>
+                        <p id="business1">• 数据中心液冷系统设计</p>
+                        <p id="business2">• 热管理解决方案</p>
+                        <p id="business3">• AI智能监控系统</p>
+                        <p id="business4">• 技术咨询与服务</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p id="copyright">©2025 立冷科技有限公司 版权所有 | <a href="mailto:yuchao.li@liquicool.hk">联系我们</a></p>
         </div>
-    </div>
+    </footer>
 
-    <!-- 版权信息 -->
-    <div class="footer" id="copyrightInfo">
-        ©2025 立冷科技有限公司版权所有 <a href="mailto:liquicool@outlook.com">联系我们</a>
-    </div>
+    <script>
+        const content = {
+            'zh-CN': {
+                pageTitle: '立冷科技 - 数据中心液冷解决方案专家',
+                companyName: '立冷科技',
+                navHome: '首页',
+                navAbout: '公司简介',
+                navTech: '核心技术',
+                navAwards: '荣誉奖项',
+                navContact: '联系我们',
+                heroTitle: '数据中心液冷解决方案专家',
+                heroSubtitle: '专业的热管理技术，高效节能的冷却系统，为您的数据中心提供最佳解决方案',
+                heroCta: '联系我们',
+                aboutTitle: '关于立冷科技',
+                aboutSubtitle: '专业的液冷技术团队',
+                aboutText1: '立冷科技由香港理工大学王钻开教授团队创立，专注于数据中心液冷解决方案的研发与应用。',
+                aboutText2: '我们致力于为客户提供高效节能的热管理技术，通过创新的结构热铠甲技术，实现数据中心的智能化温控管理。',
+                aboutText3: '我们的解决方案具有高能效比(PUE < 1.06)、高水效比(WUE < 0.5)和低碳排放的特点。',
+                stat1: '高能效比',
+                stat2: '高水效比',
+                stat3: '智能监控',
+                techTitle: '核心技术',
+                techSubtitle: '创新的液冷技术，为数据中心提供最优解决方案',
+                tech1Title: '结构热铠甲技术',
+                tech1Desc: '创新的热管理结构设计，提供卓越的散热性能，确保设备稳定运行。',
+                tech2Title: '液冷系统集成',
+                tech2Desc: '完整的数据中心液冷解决方案，从设计到实施的一站式服务。',
+                tech3Title: 'AI智能监控',
+                tech3Desc: '集成AI和IoT系统，实现智能监控和性能调节，优化系统效率。',
+                awardsTitle: '荣誉奖项',
+                awardsSubtitle: '国际认可的技术创新成果',
+                award1Title: '2024年日本传热科学纪念奖',
+                award1Desc: '表彰在传热科学领域的杰出贡献',
+                award2Title: '2023年德国跨境基金会科学突破奖',
+                award2Desc: '认可在科学技术突破方面的成就',
+                award3Title: '2022年日内瓦国际发明展金奖',
+                award3Desc: '国际发明领域的最高荣誉',
+                award4Title: '第8届香港大学生创新创业大奖赛奖项',
+                award4Desc: '青年创新创业的杰出表现',
+                contactTitle: '联系我们',
+                contactSubtitle: '立冷科技有限公司',
+                contactDesc: '专业的数据中心液冷解决方案提供商',
+                contactEmailLabel: '邮箱：',
+                contactAltLabel: '备用邮箱：',
+                businessTitle: '业务范围',
+                business1: '• 数据中心液冷系统设计',
+                business2: '• 热管理解决方案',
+                business3: '• AI智能监控系统',
+                business4: '• 技术咨询与服务',
+                copyright: '©2025 立冷科技有限公司 版权所有 | <a href="mailto:yuchao.li@liquicool.hk">联系我们</a>'
+            },
+            'zh-TW': {
+                pageTitle: '立冷科技 - 數據中心液冷解決方案專家',
+                companyName: '立冷科技',
+                navHome: '首頁',
+                navAbout: '公司簡介',
+                navTech: '核心技術',
+                navAwards: '榮譽獎項',
+                navContact: '聯絡我們',
+                heroTitle: '數據中心液冷解決方案專家',
+                heroSubtitle: '專業的熱管理技術，高效節能的冷卻系統，為您的數據中心提供最佳解決方案',
+                heroCta: '聯絡我們',
+                aboutTitle: '關於立冷科技',
+                aboutSubtitle: '專業的液冷技術團隊',
+                aboutText1: '立冷科技由香港理工大學王鑽開教授團隊創立，專注於數據中心液冷解決方案的研發與應用。',
+                aboutText2: '我們致力於為客戶提供高效節能的熱管理技術，通過創新的結構熱鎧甲技術，實現數據中心的智能化溫控管理。',
+                aboutText3: '我們的解決方案具有高能效比(PUE < 1.06)、高水效比(WUE < 0.5)和低碳排放的特點。',
+                stat1: '高能效比',
+                stat2: '高水效比',
+                stat3: '智慧監控',
+                techTitle: '核心技術',
+                techSubtitle: '創新的液冷技術，為數據中心提供最優解決方案',
+                tech1Title: '結構熱鎧甲技術',
+                tech1Desc: '創新的熱管理結構設計，提供卓越的散熱性能，確保設備穩定運行。',
+                tech2Title: '液冷系統整合',
+                tech2Desc: '完整的數據中心液冷解決方案，從設計到實施的一站式服務。',
+                tech3Title: 'AI智慧監控',
+                tech3Desc: '整合AI和IoT系統，實現智慧監控和性能調節，優化系統效率。',
+                awardsTitle: '榮譽獎項',
+                awardsSubtitle: '國際認可的技術創新成果',
+                award1Title: '2024年日本傳熱科學紀念獎',
+                award1Desc: '表彰在傳熱科學領域的傑出貢獻',
+                award2Title: '2023年德國跨境基金會科學突破獎',
+                award2Desc: '認可在科學技術突破方面的成就',
+                award3Title: '2022年日內瓦國際發明展金獎',
+                award3Desc: '國際發明領域的最高榮譽',
+                award4Title: '第8屆香港大學生創新創業大獎賽獎項',
+                award4Desc: '青年創新創業的傑出表現',
+                contactTitle: '聯絡我們',
+                contactSubtitle: '立冷科技有限公司',
+                contactDesc: '專業的數據中心液冷解決方案提供商',
+                contactEmailLabel: '郵箱：',
+                contactAltLabel: '備用郵箱：',
+                businessTitle: '業務範圍',
+                business1: '• 數據中心液冷系統設計',
+                business2: '• 熱管理解決方案',
+                business3: '• AI智慧監控系統',
+                business4: '• 技術諮詢與服務',
+                copyright: '©2025 立冷科技有限公司 版權所有 | <a href="mailto:yuchao.li@liquicool.hk">聯絡我們</a>'
+            },
+            'en': {
+                pageTitle: 'LiquiCool Technology - Data Center Liquid Cooling Solutions Expert',
+                companyName: 'LiquiCool Technology',
+                navHome: 'Home',
+                navAbout: 'About Us',
+                navTech: 'Technology',
+                navAwards: 'Awards',
+                navContact: 'Contact',
+                heroTitle: 'Data Center Liquid Cooling Solutions Expert',
+                heroSubtitle: 'Professional thermal management technology and energy-efficient cooling systems for optimal data center solutions',
+                heroCta: 'Contact Us',
+                aboutTitle: 'About LiquiCool Technology',
+                aboutSubtitle: 'Professional Liquid Cooling Technology Team',
+                aboutText1: 'LiquiCool Technology was founded by Professor Wang Zuankai\'s team from Hong Kong Polytechnic University, specializing in R&D and application of data center liquid cooling solutions.',
+                aboutText2: 'We are committed to providing customers with energy-efficient thermal management technology, achieving intelligent temperature control management for data centers through innovative structural thermal armor technology.',
+                aboutText3: 'Our solutions feature high energy efficiency (PUE < 1.06), high water efficiency (WUE < 0.5), and low carbon emissions.',
+                stat1: 'High Energy Efficiency',
+                stat2: 'High Water Efficiency',
+                stat3: 'Smart Monitoring',
+                techTitle: 'Core Technology',
+                techSubtitle: 'Innovative liquid cooling technology providing optimal solutions for data centers',
+                tech1Title: 'Structural Thermal Armor Technology',
+                tech1Desc: 'Innovative thermal management structural design providing excellent heat dissipation performance to ensure stable equipment operation.',
+                tech2Title: 'Liquid Cooling System Integration',
+                tech2Desc: 'Complete data center liquid cooling solutions, one-stop service from design to implementation.',
+                tech3Title: 'AI Smart Monitoring',
+                tech3Desc: 'Integrated AI and IoT systems for intelligent monitoring and performance adjustment, optimizing system efficiency.',
+                awardsTitle: 'Awards & Recognition',
+                awardsSubtitle: 'Internationally recognized technological innovation achievements',
+                award1Title: '2024 Japan Heat Science Memorial Award',
+                award1Desc: 'Recognition for outstanding contributions in heat transfer science',
+                award2Title: '2023 German Cross-Border Foundation Science Breakthrough Prize',
+                award2Desc: 'Recognition for achievements in scientific and technological breakthroughs',
+                award3Title: '2022 Geneva International Invention Exhibition Gold Award',
+                award3Desc: 'The highest honor in the field of international invention',
+                award4Title: '8th Hong Kong University Student Innovation Entrepreneurship Competition Award',
+                award4Desc: 'Outstanding performance in youth innovation and entrepreneurship',
+                contactTitle: 'Contact Us',
+                contactSubtitle: 'LiquiCool Technology Co., Ltd.',
+                contactDesc: 'Professional data center liquid cooling solution provider',
+                contactEmailLabel: 'Email: ',
+                contactAltLabel: 'Alternative Email: ',
+                businessTitle: 'Business Scope',
+                business1: '• Data center liquid cooling system design',
+                business2: '• Thermal management solutions',
+                business3: '• AI smart monitoring systems',
+                business4: '• Technical consulting and services',
+                copyright: '©2025 LiquiCool Technology Co., Ltd. All rights reserved | <a href="mailto:yuchao.li@liquicool.hk">Contact Us</a>'
+            }
+        };
 
-<script>
-    const messages = {
-        'zh-CN': {
-            status: '网页建设中...',
-            copyright: '©2025 立冷科技有限公司版权所有 <a href="mailto:yuchao.li@liquicool.hk">联系我们</a>',
-            title: '网页建设中'
-        },
-        'zh-TW': {
-            status: '網站建設中...',
-            copyright: '©2025 立冷科技有限公司 版權所有 <a href="mailto:yuchao.li@liquicool.hk">聯絡我們</a>',
-            title: '網站建設中'
-        },
-        'en': {
-            status: 'Under Construction...',
-            copyright: '©2025 LiquiCool Technology Co., Ltd. All rights reserved <a href="mailto:yuchao.li@liquicool.hk">Contact Us</a>',
-            title: 'Under Construction'
+        function setLanguage(lang) {
+            const texts = content[lang];
+            
+            Object.keys(texts).forEach(key => {
+                const element = document.getElementById(key.replace(/([A-Z])/g, '-$1').toLowerCase());
+                if (element) {
+                    element.innerHTML = texts[key];
+                }
+            });
+
+            document.title = texts.pageTitle;
+            document.getElementById("myDropdown").classList.remove("show");
+            localStorage.setItem('preferredLang', lang);
         }
-    };
 
-    function setLanguage(lang) {
-        document.getElementById('statusText').innerHTML = messages[lang].status;
-        document.getElementById('copyrightInfo').innerHTML = messages[lang].copyright;
-        document.title = messages[lang].title;
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-        // 关闭下拉菜单
-        document.getElementById("myDropdown").classList.remove("show");
-
-        // 保存用户选择
-        localStorage.setItem('preferredLang', lang);
-    }
-
-    function toggleDropdown() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
             }
         }
-    }
 
-    function detectLanguage() {
-        const navLang = navigator.language || navigator.userLanguage;
-        let lang = 'zh-CN';
+        function detectLanguage() {
+            const navLang = navigator.language || navigator.userLanguage;
+            let lang = 'zh-CN';
 
-        if (navLang.startsWith('zh-TW') || navLang.startsWith('zh-HK')) {
-            lang = 'zh-TW';
-        } else if (navLang.startsWith('en')) {
-            lang = 'en';
+            if (navLang.startsWith('zh-TW') || navLang.startsWith('zh-HK')) {
+                lang = 'zh-TW';
+            } else if (navLang.startsWith('en')) {
+                lang = 'en';
+            }
+
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && content.hasOwnProperty(savedLang)) {
+                lang = savedLang;
+            }
+
+            setLanguage(lang);
         }
 
-        const savedLang = localStorage.getItem('preferredLang');
-        if (savedLang && messages.hasOwnProperty(savedLang)) {
-            lang = savedLang;
-        }
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        setLanguage(lang);
-    }
-
-    document.addEventListener('DOMContentLoaded', detectLanguage);
-</script>
+        document.addEventListener('DOMContentLoaded', detectLanguage);
+    </script>
 </body>
 </html>
