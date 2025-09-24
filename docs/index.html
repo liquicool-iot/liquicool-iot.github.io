@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认标题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: #f0f2f5; /* 原来的背景颜色 */
+            font-family: Arial, sans-serif;
+        }
+
+        /* 更大的Logo容器 */
+        .logo-container {
+            width: 40vw;
+            max-width: 300px;
+            height: auto;
+            margin: 30px 0;
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            animation: spin 1s linear 1 forwards;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(270deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 动态省略号效果 */
+        .status-text {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { 
+                text-indent: 0.2em; 
+            }
+        }
+
+        /* 下拉按钮样式 */
+        .dropbtn {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 8px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 120px; /* 设置固定宽度 */
+            text-align: left;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+
+        /* 容器 <div> - 需要定位下拉内容 */
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* 下拉菜单内容 (隐藏) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4); /* 深色半透明背景，40%透明 */
+            color: white;
+            min-width: 120px; /* 设置与按钮相同的宽度 */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* 下拉菜单项 */
+        .dropdown-content button {
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 显示下拉菜单 (当用户悬停或点击时) */
+        .show {display: block;}
+
+        /* 底部版权信息 */
+        .footer {
+            margin-top: auto;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            background: #f0f2f5;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .logo-container {
+                width: 60vw;
+                max-width: 250px;
+            }
+            .status-text {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                width: 70vw;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo容器 -->
+    <div class="logo-container">
+        <img 
+            class="logo" 
+            src="logo.svg" 
+            alt="Logo" 
+            style="width: 100%; height: 100%; display: block;"
+        >
+    </div>
+
+    <!-- 状态文字 -->
+    <div class="status-text" id="statusText">网页建设中...</div>
+
+    <!-- 语言切换按钮 -->
+    <div class="dropdown" id="langDropdown">
+        <button onclick="toggleDropdown()" class="dropbtn">繁/简/EN ▼</button>
+        <div id="myDropdown" class="dropdown-content">
+            <button onclick="setLanguage('zh-CN')">简体中文</button>
+            <button onclick="setLanguage('zh-TW')">繁體中文</button>
+            <button onclick="setLanguage('en')">English</button>
+        </div>
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="footer" id="copyrightInfo">
+        ©2025 立冷科技有限公司版权所有 <a href="mailto:liquicool@outlook.com">联系我们</a>
+    </div>
+
+<script>
+    const messages = {
+        'zh-CN': {
+            status: '网页建设中...',
+            copyright: '©2025 立冷科技有限公司版权所有 <a href="mailto:yuchao.li@liquicool.hk">联系我们</a>',
+            title: '网页建设中'
+        },
+        'zh-TW': {
+            status: '網站建設中...',
+            copyright: '©2025 立冷科技有限公司 版權所有 <a href="mailto:yuchao.li@liquicool.hk">聯絡我們</a>',
+            title: '網站建設中'
+        },
+        'en': {
+            status: 'Under Construction...',
+            copyright: '©2025 LiquiCool Technology Co., Ltd. All rights reserved <a href="mailto:yuchao.li@liquicool.hk">Contact Us</a>',
+            title: 'Under Construction'
+        }
+    };
+
+    function setLanguage(lang) {
+        document.getElementById('statusText').innerHTML = messages[lang].status;
+        document.getElementById('copyrightInfo').innerHTML = messages[lang].copyright;
+        document.title = messages[lang].title;
+
+        // 关闭下拉菜单
+        document.getElementById("myDropdown").classList.remove("show");
+
+        // 保存用户选择
+        localStorage.setItem('preferredLang', lang);
+    }
+
+    function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    function detectLanguage() {
+        const navLang = navigator.language || navigator.userLanguage;
+        let lang = 'zh-CN';
+
+        if (navLang.startsWith('zh-TW') || navLang.startsWith('zh-HK')) {
+            lang = 'zh-TW';
+        } else if (navLang.startsWith('en')) {
+            lang = 'en';
+        }
+
+        const savedLang = localStorage.getItem('preferredLang');
+        if (savedLang && messages.hasOwnProperty(savedLang)) {
+            lang = savedLang;
+        }
+
+        setLanguage(lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', detectLanguage);
+</script>
+</body>
+</html>
