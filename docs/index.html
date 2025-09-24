@@ -202,6 +202,19 @@
             font-size: 1.1rem;
         }
 
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
         /* Technology Section */
         .tech-grid {
             display: grid;
@@ -315,6 +328,11 @@
                 gap: 2rem;
             }
 
+            .responsive-image {
+                max-width: 90%;
+                margin: 1rem 0;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -384,19 +402,8 @@
                         <p id="about-text2">我们致力于为客户提供高效节能的热管理技术，通过创新的结构热铠甲技术，实现数据中心的智能化温控管理。</p>
                         <p id="about-text3">我们的解决方案具有高能效比(PUE < 1.06)、高水效比(WUE < 0.5)和低碳排放的特点。</p>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h4>PUE < 1.06</h4>
-                            <p id="stat1">高能效比</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>WUE < 0.5</h4>
-                            <p id="stat2">高水效比</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>AI + IoT</h4>
-                            <p id="stat3">智能监控</p>
-                        </div>
+                    <div class="about-image">
+                        <img src="aiot.png" alt="AI + IoT 智能监控系统" class="responsive-image">
                     </div>
                 </div>
             </div>
