@@ -9,10 +9,26 @@ Allow: /index.html
 Allow: /logo.svg
 Allow: /aiot.png
 
+# Allow multilingual parameter URLs
+Allow: /*?lang=zh-CN
+Allow: /*?lang=zh-TW
+Allow: /*?lang=en
+
 # Block crawling of any backup or temporary files
 Disallow: *.bak
 Disallow: *.tmp
 Disallow: *~
 
 # Crawl-delay to be respectful to server resources
+Crawl-delay: 1
+
+# Additional SEO directives
+# Support for Chinese search engines
+User-agent: Baiduspider
+Crawl-delay: 1
+
+User-agent: 360Spider
+Crawl-delay: 1
+
+User-agent: Sogou web spider
 Crawl-delay: 1
