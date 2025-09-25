@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://liquicool-iot.github.io/sitemap.xml
+Sitemap: https://www.liquicool.hk/sitemap.xml
 
 # Allow search engines to crawl all content
 Allow: /index.html
