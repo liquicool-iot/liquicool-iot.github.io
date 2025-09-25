@@ -11,34 +11,36 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://liquicool-iot.github.io/?lang=en" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://liquicool-iot.github.io/" />
     </url>
+    <!-- Multilingual URLs for simplified Chinese -->
     <url>
-        <loc>https://liquicool-iot.github.io/#home</loc>
+        <loc>https://liquicool-iot.github.io/?lang=zh-CN</loc>
         <lastmod>2025-09-25</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://liquicool-iot.github.io/?lang=zh-CN" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://liquicool-iot.github.io/?lang=zh-TW" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://liquicool-iot.github.io/?lang=en" />
     </url>
+
+    <!-- Multilingual URLs for traditional Chinese -->
     <url>
-        <loc>https://liquicool-iot.github.io/#about</loc>
+        <loc>https://liquicool-iot.github.io/?lang=zh-TW</loc>
         <lastmod>2025-09-25</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://liquicool-iot.github.io/?lang=zh-CN" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://liquicool-iot.github.io/?lang=zh-TW" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://liquicool-iot.github.io/?lang=en" />
     </url>
+
+    <!-- Multilingual URLs for English -->
     <url>
-        <loc>https://liquicool-iot.github.io/#technology</loc>
+        <loc>https://liquicool-iot.github.io/?lang=en</loc>
         <lastmod>2025-09-25</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://liquicool-iot.github.io/#awards</loc>
-        <lastmod>2025-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://liquicool-iot.github.io/#contact</loc>
-        <lastmod>2025-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://liquicool-iot.github.io/?lang=zh-CN" />
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://liquicool-iot.github.io/?lang=zh-TW" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://liquicool-iot.github.io/?lang=en" />
     </url>
 </urlset>
