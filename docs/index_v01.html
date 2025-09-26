@@ -144,11 +144,6 @@
             box-sizing: border-box;
         }
 
-        html {
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -157,22 +152,6 @@
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            opacity: 0;
-            animation: pageLoad 1.2s ease-out forwards;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Loading Animation */
-        @keyframes pageLoad {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Performance optimizations */
@@ -219,16 +198,13 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            margin: 0;
-            padding: 0;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 0;
-            margin: 0;
+            padding: 1rem 0;
         }
 
         .logo-header {
@@ -237,7 +213,6 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #0066cc;
-            padding: 20px 0;
         }
 
         .logo-header img {
@@ -255,31 +230,11 @@
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 8px 16px;
-            border-radius: 20px;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #0066cc;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: #0066cc;
-            background: rgba(0, 102, 204, 0.05);
-        }
-
-        .nav-links a:hover::after {
-            width: 80%;
         }
 
         /* Language Dropdown */
@@ -292,38 +247,13 @@
             color: white;
             padding: 8px 16px;
             border: none;
-            border-radius: 20px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
-        }
-
-        .dropbtn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
         }
 
         .dropbtn:hover {
             background: #0052a3;
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
-        }
-
-        .dropbtn:hover::before {
-            left: 100%;
-        }
-
-        .dropbtn:active {
-            transform: translateY(0) scale(1.02);
         }
 
         .dropdown-content {
@@ -331,24 +261,15 @@
             position: absolute;
             right: 0;
             background: white;
-            min-width: 140px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border-radius: 10px;
+            min-width: 120px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 4px;
             z-index: 1;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            overflow: hidden;
-        }
-
-        .dropdown-content.show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .dropdown-content button {
             color: #333;
-            padding: 12px 16px;
+            padding: 8px 16px;
             text-decoration: none;
             display: block;
             width: 100%;
@@ -356,38 +277,10 @@
             border: none;
             background: none;
             cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            font-size: 14px;
-        }
-
-        .dropdown-content button::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(0, 102, 204, 0.1), rgba(0, 102, 204, 0.05));
-            transition: width 0.3s ease;
         }
 
         .dropdown-content button:hover {
-            background: rgba(0, 102, 204, 0.08);
-            color: #0066cc;
-            transform: translateX(4px);
-        }
-
-        .dropdown-content button:hover::before {
-            width: 100%;
-        }
-
-        .dropdown-content button:first-child {
-            border-radius: 10px 10px 0 0;
-        }
-
-        .dropdown-content button:last-child {
-            border-radius: 0 0 10px 10px;
+            background: #f1f1f1;
         }
 
         .show {
@@ -396,44 +289,15 @@
 
         /* Main Content */
         main {
-            margin-top: 0;
-            padding-top: 0;
+            margin-top: 80px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0066cc 0%, #004499 50%, #0066cc 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease-in-out infinite;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
             color: white;
-            padding: 180px 0 100px 0;
-            margin-top: 0;
+            padding: 100px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-            animation: floatingBubbles 10s ease-in-out infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes floatingBubbles {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-            50% { transform: translateY(-20px) scale(1.1); opacity: 0.6; }
         }
 
         .hero h1 {
@@ -456,34 +320,11 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
+            transition: transform 0.3s;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px) scale(1.02);
+            transform: translateY(-2px);
         }
 
         /* Sections */
@@ -555,29 +396,11 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(0, 102, 204, 0.1), transparent);
-            transition: left 0.6s ease;
+            transition: transform 0.3s;
         }
 
         .tech-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .tech-card:hover::before {
-            left: 100%;
+            transform: translateY(-5px);
         }
 
         .tech-card h4 {
@@ -608,42 +431,6 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .award-item::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(0, 102, 204, 0.1) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
-            pointer-events: none;
-        }
-
-        .award-item:hover {
-            transform: translateY(-5px) rotate(1deg);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .award-item:hover::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        .award-item a {
-            position: relative;
-            z-index: 2;
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            width: 100%;
-            height: 100%;
         }
 
         .award-item h4 {
@@ -695,119 +482,6 @@
 
         footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Scroll-triggered animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Staggered animation for grid items */
-        .tech-card:nth-child(1) { transition-delay: 0.1s; }
-        .tech-card:nth-child(2) { transition-delay: 0.2s; }
-        .tech-card:nth-child(3) { transition-delay: 0.3s; }
-
-        .award-item:nth-child(1) { transition-delay: 0.1s; }
-        .award-item:nth-child(2) { transition-delay: 0.2s; }
-        .award-item:nth-child(3) { transition-delay: 0.3s; }
-        .award-item:nth-child(4) { transition-delay: 0.4s; }
-
-        /* Google Play Badge Animation */
-        #google-play-badge {
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        #google-play-badge:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            filter: brightness(1.1);
-        }
-
-        #google-play-badge:active {
-            transform: translateY(-1px) scale(1.02);
-        }
-
-        /* Add shine effect on hover */
-        .google-play-container {
-            position: relative;
-            display: inline-block;
-            overflow: visible;
-            border-radius: 8px;
-            padding: 5px;
-        }
-
-        .google-play-container::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: -100%;
-            width: calc(100% - 10px);
-            height: calc(100% - 10px);
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-            z-index: 1;
-            pointer-events: none;
-            border-radius: 8px;
-        }
-
-        .google-play-container:hover::before {
-            left: 100%;
-        }
-
-        /* Email links styling */
-        .contact-info a[href^="mailto:"] {
-            transition: all 0.3s ease;
-            border-radius: 3px;
-            padding: 2px 4px;
-        }
-
-        .contact-info a[href^="mailto:"]:hover {
-            background: rgba(0, 102, 204, 0.1);
-            text-decoration: underline !important;
-            transform: translateX(2px);
         }
 
         /* Mobile Responsive */
@@ -899,15 +573,15 @@
 
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title fade-in" id="about-title">关于立冷科技</h2>
+                <h2 class="section-title" id="about-title">关于立冷科技</h2>
                 <div class="about-content">
-                    <div class="about-text slide-in-left">
+                    <div class="about-text">
                         <h3 id="about-subtitle">专业的液冷技术团队</h3>
                         <p id="about-text1">立冷科技由香港理工大学王钻开教授团队创立，专注于数据中心液冷解决方案的研发与应用。</p>
                         <p id="about-text2">我们致力于为客户提供高效节能的热管理技术，通过创新的结构热铠甲技术，实现数据中心的智能化温控管理。</p>
                         <p id="about-text3">我们的解决方案具有高能效比(PUE < 1.06)、高水效比(WUE < 0.5)和低碳排放的特点。</p>
                     </div>
-                    <div class="about-image slide-in-right">
+                    <div class="about-image">
                         <img src="images/aiot.png" alt="AI + IoT 智能监控系统" class="responsive-image" loading="lazy" width="600" height="400" decoding="async">
                     </div>
                 </div>
@@ -916,18 +590,18 @@
 
         <section id="technology">
             <div class="container">
-                <h2 class="section-title fade-in" id="tech-title">核心技术</h2>
-                <p class="section-subtitle fade-in" id="tech-subtitle">创新的液冷技术，为数据中心提供最优解决方案</p>
+                <h2 class="section-title" id="tech-title">核心技术</h2>
+                <p class="section-subtitle" id="tech-subtitle">创新的液冷技术，为数据中心提供最优解决方案</p>
                 <div class="tech-grid">
-                    <div class="tech-card scale-in">
+                    <div class="tech-card">
                         <h4 id="tech1-title">结构热铠甲技术</h4>
                         <p id="tech1-desc">创新的热管理结构设计，提供卓越的散热性能，确保设备稳定运行。</p>
                     </div>
-                    <div class="tech-card scale-in">
+                    <div class="tech-card">
                         <h4 id="tech2-title">液冷系统集成</h4>
                         <p id="tech2-desc">完整的数据中心液冷解决方案，从设计到实施的一站式服务。</p>
                     </div>
-                    <div class="tech-card scale-in">
+                    <div class="tech-card">
                         <h4 id="tech3-title">AI智能监控</h4>
                         <p id="tech3-desc">集成AI和IoT系统，实现智能监控和性能调节，优化系统效率。</p>
                     </div>
@@ -937,28 +611,28 @@
 
         <section id="awards" class="awards">
             <div class="container">
-                <h2 class="section-title fade-in" id="awards-title">荣誉奖项</h2>
-                <p class="section-subtitle fade-in" id="awards-subtitle">国际认可的技术创新成果</p>
+                <h2 class="section-title" id="awards-title">荣誉奖项</h2>
+                <p class="section-subtitle" id="awards-subtitle">国际认可的技术创新成果</p>
                 <div class="awards-grid">
-                    <div class="award-item fade-in">
+                    <div class="award-item">
                         <a href="http://www.polyu.edu.hk/rio/news/2024/20240607---polyu-scientist-bestowed-nukiyama-memorial-award-for-exceptional-thermal-science/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <h4 id="award1-title">2024年日本传热科学纪念奖</h4>
                             <p id="award1-desc">表彰在传热科学领域的杰出贡献</p>
                         </a>
                     </div>
-                    <div class="award-item fade-in">
+                    <div class="award-item">
                         <a href="https://www.polyu.edu.hk/sc/rio/news/2023/20230818-falling-walls-science-breakthroughs-of-the-year-2023/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <h4 id="award2-title">2023年德国跨境基金会科学突破奖</h4>
                             <p id="award2-desc">认可在科学技术突破方面的成就</p>
                         </a>
                     </div>
-                    <div class="award-item fade-in">
+                    <div class="award-item">
                         <a href="https://scholars.cityu.edu.hk/en/prizes/gold-medal-at-2022-inventions-geneva-evaluation-days(63b4ce0b-3777-4a72-9be7-ee68b400543c).html" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <h4 id="award3-title">2022年日内瓦国际发明展金奖</h4>
                             <p id="award3-desc">国际发明领域的最高荣誉</p>
                         </a>
                     </div>
-                    <div class="award-item fade-in">
+                    <div class="award-item">
                         <a href="https://www.cityu.edu.hk/hktech300/zh-hk/media/latest-news/cityu-receives-outstanding-organization-award-and-won-most-awards-hong-kong" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                             <h4 id="award4-title">第8届香港大学生创新创业大奖赛奖项</h4>
                             <p id="award4-desc">青年创新创业的杰出表现</p>
@@ -975,8 +649,8 @@
                     <div class="contact-info">
                         <h4 id="contact-subtitle">立冷科技有限公司</h4>
                         <p id="contact-desc">专业的数据中心液冷解决方案提供商</p>
-                        <p><strong id="contact-email-label">邮箱：</strong><a href="mailto:yuchao.li@liquicool.hk" style="color: #0066cc; text-decoration: none;">yuchao.li@liquicool.hk</a></p>
-                        <p><strong id="contact-alt-label">备用邮箱：</strong><a href="mailto:liquicool@outlook.com" style="color: #0066cc; text-decoration: none;">liquicool@outlook.com</a></p>
+                        <p><strong id="contact-email-label">邮箱：</strong>yuchao.li@liquicool.hk</p>
+                        <p><strong id="contact-alt-label">备用邮箱：</strong>liquicool@outlook.com</p>
                     </div>
                     <div class="contact-info">
                         <h4 id="business-title">业务范围</h4>
@@ -988,7 +662,7 @@
                     <div class="contact-info">
                         <h4 id="download-title">资料下载</h4>
                         <h5><a href="app/Liquicool_1_0_13.apk" id="app-title" style="color: #0066cc; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">浸没液冷传感器APP</a></h5>
-                        <a href="https://play.google.com/store/apps/details?id=hk.liquicool.liquicool" target="_blank" rel="noopener noreferrer" class="google-play-container">
+                        <a href="https://play.google.com/store/apps/details?id=hk.liquicool.liquicool" target="_blank" rel="noopener noreferrer">
                             <img id="google-play-badge" src="images/GetItOnGooglePlay_cn.png" alt="在Google Play上获取" style="height: 60px; margin-top: 10px;" loading="lazy">
                         </a>
                     </div>
@@ -999,7 +673,7 @@
 
     <footer>
         <div class="container">
-            <p id="copyright">©2025 立冷科技有限公司 版权所有 | <a href="mailto:xuezhi.qin@liquicool.hk">意见反馈</a></p>
+            <p id="copyright">©2025 立冷科技有限公司 版权所有 | <a href="mailto:yuchao.li@liquicool.hk">联系我们</a></p>
         </div>
     </footer>
 
@@ -1056,7 +730,7 @@
                 business4: '• 技术咨询与服务',
                 downloadTitle: '资料下载',
                 appTitle: '浸没液冷传感器APP',
-                copyright: '©2025 立冷科技有限公司 版权所有 | <a href="mailto:xuezhi.qin@liquicool.hk">意见反馈</a>'
+                copyright: '©2025 立冷科技有限公司 版权所有 | <a href="mailto:yuchao.li@liquicool.hk">联系我们</a>'
             },
             'zh-HK': {
                 pageTitle: '立冷科技 - 數據中心液冷解決方案專家',
@@ -1109,7 +783,7 @@
                 business4: '• 技術諮詢與服務',
                 downloadTitle: '資料下載',
                 appTitle: '浸沒液冷傳感器APP',
-                copyright: '©2025 立冷科技有限公司 版權所有 | <a href="mailto:xuezhi.qin@liquicool.hk">意見反饋</a>'
+                copyright: '©2025 立冷科技有限公司 版權所有 | <a href="mailto:yuchao.li@liquicool.hk">聯絡我們</a>'
             },
             'en': {
                 pageTitle: 'LiquiCool Technology - Data Center Liquid Cooling Solutions Expert',
@@ -1162,7 +836,7 @@
                 business4: '• Technical consulting and services',
                 downloadTitle: 'Downloads',
                 appTitle: 'Immersive Liquid Cooling Sensor APP',
-                copyright: '©2025 LiquiCool Technology Co., Ltd. All rights reserved | <a href="mailto:xuezhi.qin@liquicool.hk">Feedback</a>'
+                copyright: '©2025 LiquiCool Technology Co., Ltd. All rights reserved | <a href="mailto:yuchao.li@liquicool.hk">Contact Us</a>'
             }
         };
 
@@ -1339,18 +1013,7 @@
         }
 
         function toggleDropdown() {
-            const dropdown = document.getElementById("myDropdown");
-            if (dropdown.classList.contains("show")) {
-                dropdown.classList.remove("show");
-                setTimeout(() => {
-                    dropdown.style.display = "none";
-                }, 300);
-            } else {
-                dropdown.style.display = "block";
-                setTimeout(() => {
-                    dropdown.classList.add("show");
-                }, 10);
-            }
+            document.getElementById("myDropdown").classList.toggle("show");
         }
 
         window.onclick = function(event) {
@@ -1360,9 +1023,6 @@
                     var openDropdown = dropdowns[i];
                     if (openDropdown.classList.contains('show')) {
                         openDropdown.classList.remove('show');
-                        setTimeout(() => {
-                            openDropdown.style.display = "none";
-                        }, 300);
                     }
                 }
             }
@@ -1400,46 +1060,7 @@
             });
         });
 
-        // Intersection Observer for scroll animations
-        function setupScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all animation elements
-            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // Force scroll to top immediately
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-
-        document.addEventListener('DOMContentLoaded', function() {
-            detectLanguage();
-            setupScrollAnimations();
-            // Ensure scroll to top after everything loads
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 100);
-        });
-
-        // Also handle page refresh/reload
-        window.addEventListener('beforeunload', function() {
-            window.scrollTo(0, 0);
-        });
+        document.addEventListener('DOMContentLoaded', detectLanguage);
     </script>
 </body>
 </html>
