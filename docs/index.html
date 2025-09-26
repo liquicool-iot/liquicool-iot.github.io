@@ -446,14 +446,21 @@
         /* Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
         }
 
         .contact-info h4 {
             color: #0066cc;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+        }
+
+        .contact-info h5 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .contact-info p {
@@ -652,6 +659,13 @@
                         <p id="business3">• AI智能监控系统</p>
                         <p id="business4">• 技术咨询与服务</p>
                     </div>
+                    <div class="contact-info">
+                        <h4 id="download-title">资料下载</h4>
+                        <h5 id="app-title">浸没液冷传感器APP</h5>
+                        <a href="https://play.google.com/store/apps/details?id=hk.liquicool.liquicool" target="_blank" rel="noopener noreferrer">
+                            <img id="google-play-badge" src="images/GetItOnGooglePlay_cn.png" alt="在Google Play上获取" style="height: 60px; margin-top: 10px;" loading="lazy">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -714,6 +728,8 @@
                 business2: '• 热管理解决方案',
                 business3: '• AI智能监控系统',
                 business4: '• 技术咨询与服务',
+                downloadTitle: '资料下载',
+                appTitle: '浸没液冷传感器数据APP',
                 copyright: '©2025 立冷科技有限公司 版权所有 | <a href="mailto:yuchao.li@liquicool.hk">联系我们</a>'
             },
             'zh-HK': {
@@ -765,6 +781,8 @@
                 business2: '• 熱管理解決方案',
                 business3: '• AI智慧監控系統',
                 business4: '• 技術諮詢與服務',
+                downloadTitle: '資料下載',
+                appTitle: '浸沒液冷傳感器APP',
                 copyright: '©2025 立冷科技有限公司 版權所有 | <a href="mailto:yuchao.li@liquicool.hk">聯絡我們</a>'
             },
             'en': {
@@ -816,6 +834,8 @@
                 business2: '• Thermal management solutions',
                 business3: '• AI smart monitoring systems',
                 business4: '• Technical consulting and services',
+                downloadTitle: 'Downloads',
+                appTitle: 'Immersive Liquid Cooling Sensor APP',
                 copyright: '©2025 LiquiCool Technology Co., Ltd. All rights reserved | <a href="mailto:yuchao.li@liquicool.hk">Contact Us</a>'
             }
         };
@@ -860,6 +880,34 @@
 
             // Update structured data based on language
             updateStructuredData(lang, texts);
+
+            // Update Google Play badge image based on language
+            const googlePlayBadge = document.getElementById('google-play-badge');
+            if (googlePlayBadge) {
+                let imagePath;
+                let altText;
+
+                switch(lang) {
+                    case 'zh-CN':
+                        imagePath = 'images/GetItOnGooglePlay_cn.png';
+                        altText = '在Google Play上获取';
+                        break;
+                    case 'zh-HK':
+                        imagePath = 'images/GetItOnGooglePlay_hk.png';
+                        altText = '在Google Play上獲取';
+                        break;
+                    case 'en':
+                        imagePath = 'images/GetItOnGooglePlay_en.png';
+                        altText = 'Get it on Google Play';
+                        break;
+                    default:
+                        imagePath = 'images/GetItOnGooglePlay_cn.png';
+                        altText = '在Google Play上获取';
+                }
+
+                googlePlayBadge.src = imagePath;
+                googlePlayBadge.alt = altText;
+            }
 
             document.getElementById("myDropdown").classList.remove("show");
             localStorage.setItem('preferredLang', lang);
