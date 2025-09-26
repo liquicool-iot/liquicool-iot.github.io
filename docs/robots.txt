@@ -11,7 +11,7 @@ Allow: /aiot.png
 
 # Allow multilingual parameter URLs
 Allow: /*?lang=zh-CN
-Allow: /*?lang=zh-TW
+Allow: /*?lang=zh-HK
 Allow: /*?lang=en
 
 # Block crawling of any backup or temporary files

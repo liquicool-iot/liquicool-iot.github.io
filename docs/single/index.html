@@ -55,12 +55,7 @@
     <meta name="twitter:description" id="twitterDescription" content="香港立冷科技LiquiCool专注数据中心液冷解决方案，提供高效节能热管理技术。">
     <meta name="twitter:image" content="https://www.liquicool.hk/images/aiot.png">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="logo.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="images/aiot.png" as="image">
-
     <!-- Favicon and App Icons -->
-    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="logo.svg">
     <link rel="apple-touch-icon" href="logo.svg">
@@ -149,26 +144,11 @@
             line-height: 1.6;
             color: #333;
             font-display: swap;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Performance optimizations */
         img {
             loading: lazy;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-
-        /* Critical rendering optimizations */
-        .hero {
-            contain: layout style;
-            will-change: transform;
-        }
-
-        .tech-card, .award-item {
-            contain: layout style;
         }
 
         .responsive-image {
@@ -535,21 +515,21 @@
 	<header>
         <nav class="container">
             <div class="logo-header">
-                <img src="logo.svg" alt="立冷科技" width="60" height="60" decoding="async">
+                <img src="logo.svg" alt="立冷科技" width="60" height="60">
             </div>
-            <ul class="nav-links" role="navigation" aria-label="主导航菜单">
-                <li><a href="#home" id="nav-home" aria-label="回到首页">首页</a></li>
-                <li><a href="#about" id="nav-about" aria-label="了解公司简介">公司简介</a></li>
-                <li><a href="#technology" id="nav-tech" aria-label="查看核心技术">核心技术</a></li>
-                <li><a href="#awards" id="nav-awards" aria-label="查看荣誉奖项">荣誉奖项</a></li>
-                <li><a href="#contact" id="nav-contact" aria-label="联系我们">联系我们</a></li>
+            <ul class="nav-links">
+                <li><a href="#home" id="nav-home">首页</a></li>
+                <li><a href="#about" id="nav-about">公司简介</a></li>
+                <li><a href="#technology" id="nav-tech">核心技术</a></li>
+                <li><a href="#awards" id="nav-awards">荣誉奖项</a></li>
+                <li><a href="#contact" id="nav-contact">联系我们</a></li>
             </ul>
             <div class="dropdown">
-                <button onclick="toggleDropdown()" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-label="选择语言">繁/简/EN ▼</button>
-                <div id="myDropdown" class="dropdown-content" role="menu" aria-labelledby="language-selector">
-                    <button onclick="setLanguage('zh-CN')" role="menuitem">简体中文</button>
-                    <button onclick="setLanguage('zh-HK')" role="menuitem">繁體中文</button>
-                    <button onclick="setLanguage('en')" role="menuitem">English</button>
+                <button onclick="toggleDropdown()" class="dropbtn">繁/简/EN ▼</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <button onclick="setLanguage('zh-CN')">简体中文</button>
+                    <button onclick="setLanguage('zh-HK')">繁體中文</button>
+                    <button onclick="setLanguage('en')">English</button>
                 </div>
             </div>
         </nav>
@@ -560,7 +540,7 @@
             <div class="container">
                 <h1 id="hero-title">数据中心液冷解决方案专家</h1>
                 <p id="hero-subtitle">专业的热管理技术，高效节能的冷却系统，为您的数据中心提供最佳解决方案</p>
-                <a href="#contact" class="cta-button" id="hero-cta" aria-label="跳转到联系我们部分">联系我们</a>
+                <a href="#contact" class="cta-button" id="hero-cta">联系我们</a>
             </div>
         </section>
 
@@ -575,7 +555,7 @@
                         <p id="about-text3">我们的解决方案具有高能效比(PUE < 1.06)、高水效比(WUE < 0.5)和低碳排放的特点。</p>
                     </div>
                     <div class="about-image">
-                        <img src="images/aiot.png" alt="AI + IoT 智能监控系统" class="responsive-image" loading="lazy" width="600" height="400" decoding="async">
+                        <img src="images/aiot.png" alt="AI + IoT 智能监控系统" class="responsive-image" loading="lazy" width="600" height="400">
                     </div>
                 </div>
             </div>
