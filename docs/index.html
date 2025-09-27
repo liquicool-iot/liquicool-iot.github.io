@@ -323,10 +323,6 @@
             position: relative;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .dropbtn {
             background: #0066cc;
             color: white;
@@ -382,16 +378,11 @@
             pointer-events: none;
         }
 
-        .dropdown-content.hover-show {
+        .dropdown-content.show {
             display: block;
             opacity: 1;
             transform: translateY(0);
             pointer-events: auto;
-        }
-
-        .dropdown-content.show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .dropdown-content button {
@@ -859,7 +850,7 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 980px) {
+        @media (max-width: 1000px) {
             .nav-links {
                 display: none;
             }
@@ -929,9 +920,9 @@
                 <li><a href="#awards" id="nav-awards" aria-label="查看荣誉奖项">荣誉奖项</a></li>
                 <li><a href="#contact" id="nav-contact" aria-label="联系我们">联系我们</a></li>
             </ul>
-            <div class="dropdown" onmouseenter="showDropdown()" onmouseleave="hideDropdown()">
-                <button onclick="toggleDropdown()" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-label="选择语言">繁/简/EN ▼</button>
-                <div id="myDropdown" class="dropdown-content" role="menu" aria-labelledby="language-selector">
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" onmouseenter="showDropdown()" onmouseleave="hideDropdown()" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-label="选择语言">繁/简/EN ▼</button>
+                <div id="myDropdown" class="dropdown-content" role="menu" aria-labelledby="language-selector" onmouseenter="keepDropdownOpen()" onmouseleave="hideDropdown()">
                     <button onclick="setLanguage('zh-CN')" role="menuitem">简体中文</button>
                     <button onclick="setLanguage('zh-HK')" role="menuitem">繁體中文</button>
                     <button onclick="setLanguage('en')" role="menuitem">English</button>
@@ -1397,16 +1388,27 @@
             clearTimeout(leaveTimer);
             hoverTimer = setTimeout(() => {
                 const dropdown = document.getElementById("myDropdown");
-                dropdown.classList.add("hover-show");
-            }, 500);
+                dropdown.style.display = "block";
+                setTimeout(() => {
+                    dropdown.classList.add("show");
+                }, 10);
+            }, 200);
         }
 
         function hideDropdown() {
             clearTimeout(hoverTimer);
             leaveTimer = setTimeout(() => {
                 const dropdown = document.getElementById("myDropdown");
-                dropdown.classList.remove("hover-show");
-            }, 500);
+                dropdown.classList.remove("show");
+                setTimeout(() => {
+                    dropdown.style.display = "none";
+                }, 300);
+            }, 200);
+        }
+
+        function keepDropdownOpen() {
+            clearTimeout(leaveTimer);
+            clearTimeout(hoverTimer);
         }
 
         function toggleDropdown() {
