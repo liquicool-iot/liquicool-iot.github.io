@@ -323,6 +323,10 @@
             position: relative;
         }
 
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .dropbtn {
             background: #0066cc;
             color: white;
@@ -375,6 +379,14 @@
             transform: translateY(-10px);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             overflow: hidden;
+            pointer-events: none;
+        }
+
+        .dropdown-content.hover-show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
 
         .dropdown-content.show {
@@ -917,7 +929,7 @@
                 <li><a href="#awards" id="nav-awards" aria-label="查看荣誉奖项">荣誉奖项</a></li>
                 <li><a href="#contact" id="nav-contact" aria-label="联系我们">联系我们</a></li>
             </ul>
-            <div class="dropdown">
+            <div class="dropdown" onmouseenter="showDropdown()" onmouseleave="hideDropdown()">
                 <button onclick="toggleDropdown()" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-label="选择语言">繁/简/EN ▼</button>
                 <div id="myDropdown" class="dropdown-content" role="menu" aria-labelledby="language-selector">
                     <button onclick="setLanguage('zh-CN')" role="menuitem">简体中文</button>
@@ -1376,6 +1388,25 @@
             }
 
             structuredDataScript.textContent = JSON.stringify(data, null, 2);
+        }
+
+        let hoverTimer = null;
+        let leaveTimer = null;
+
+        function showDropdown() {
+            clearTimeout(leaveTimer);
+            hoverTimer = setTimeout(() => {
+                const dropdown = document.getElementById("myDropdown");
+                dropdown.classList.add("hover-show");
+            }, 500);
+        }
+
+        function hideDropdown() {
+            clearTimeout(hoverTimer);
+            leaveTimer = setTimeout(() => {
+                const dropdown = document.getElementById("myDropdown");
+                dropdown.classList.remove("hover-show");
+            }, 500);
         }
 
         function toggleDropdown() {
