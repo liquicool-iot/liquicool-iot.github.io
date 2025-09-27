@@ -1,0 +1,29 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="4" fill="#2563eb"/>
+
+  <!-- DNA-like helix representing nature-inspired design -->
+  <g fill="white" opacity="0.9">
+    <!-- Left strand -->
+    <circle cx="10" cy="8" r="1.5"/>
+    <circle cx="8" cy="12" r="1.5"/>
+    <circle cx="10" cy="16" r="1.5"/>
+    <circle cx="8" cy="20" r="1.5"/>
+    <circle cx="10" cy="24" r="1.5"/>
+
+    <!-- Right strand -->
+    <circle cx="22" cy="8" r="1.5"/>
+    <circle cx="24" cy="12" r="1.5"/>
+    <circle cx="22" cy="16" r="1.5"/>
+    <circle cx="24" cy="20" r="1.5"/>
+    <circle cx="22" cy="24" r="1.5"/>
+
+    <!-- Connecting lines -->
+    <rect x="9" y="11" width="14" height="1" rx="0.5" opacity="0.6"/>
+    <rect x="9" y="15" width="14" height="1" rx="0.5" opacity="0.6"/>
+    <rect x="9" y="19" width="14" height="1" rx="0.5" opacity="0.6"/>
+  </g>
+
+  <!-- Central molecule -->
+  <circle cx="16" cy="16" r="2" fill="white" opacity="0.8"/>
+  <circle cx="16" cy="16" r="1" fill="#2563eb"/>
+</svg>

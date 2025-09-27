@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Generator</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script>
+        function generateImage(width, height, text, filename, gradient) {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = width;
+            canvas.height = height;
+
+            // Create gradient
+            const grad = ctx.createLinearGradient(0, 0, width, height);
+            grad.addColorStop(0, gradient[0]);
+            grad.addColorStop(0.5, gradient[1]);
+            grad.addColorStop(1, gradient[2]);
+
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, width, height);
+
+            // Add overlay
+            ctx.fillStyle = 'rgba(0,0,0,0.3)';
+            ctx.fillRect(0, 0, width, height);
+
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, width/2, height/2);
+
+            // Download
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Generate all images
+        setTimeout(() => {
+            generateImage(600, 400, 'Nature-Inspired Engineering', 'hero-nature-inspired.jpg',
+                         ['#2563eb', '#3b82f6', '#1d4ed8']);
+        }, 100);
+
+        setTimeout(() => {
+            generateImage(320, 200, 'Nature 2024', 'nature-2024.jpg',
+                         ['#059669', '#10b981', '#047857']);
+        }, 200);
+
+        setTimeout(() => {
+            generateImage(320, 200, 'Nature Nano 2023', 'nature-nano-2023.jpg',
+                         ['#dc2626', '#ef4444', '#b91c1c']);
+        }, 300);
+
+        setTimeout(() => {
+            generateImage(320, 200, 'Nature 2022', 'nature-2022.jpg',
+                         ['#7c3aed', '#8b5cf6', '#6d28d9']);
+        }, 400);
+
+        setTimeout(() => {
+            generateImage(320, 200, 'Science 2021', 'science-2021.jpg',
+                         ['#f59e0b', '#fbbf24', '#d97706']);
+        }, 500);
+
+        setTimeout(() => {
+            generateImage(300, 300, 'Prof. Wang Zuankai', 'wang-zuankai.jpg',
+                         ['#1f2937', '#374151', '#111827']);
+        }, 600);
+
+        setTimeout(() => {
+            generateImage(200, 200, 'Team Member', 'member-1.jpg',
+                         ['#065f46', '#047857', '#064e3b']);
+        }, 700);
+
+        setTimeout(() => {
+            generateImage(200, 200, 'Team Member', 'member-2.jpg',
+                         ['#7c2d12', '#ea580c', '#9a3412']);
+        }, 800);
+
+        setTimeout(() => {
+            generateImage(200, 200, 'Team Member', 'member-3.jpg',
+                         ['#581c87', '#7c3aed', '#6b21a8']);
+        }, 900);
+
+        setTimeout(() => {
+            generateImage(500, 300, 'Research Laboratory', 'lab-image.jpg',
+                         ['#1e293b', '#334155', '#0f172a']);
+        }, 1000);
+    </script>
+</body>
+</html>
