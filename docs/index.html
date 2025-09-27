@@ -337,6 +337,10 @@
             box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
         }
 
+        .dropbtn:not(:hover) {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
         .dropbtn::before {
             content: '';
             position: absolute;
@@ -844,6 +848,19 @@
         }
 
         .contact-info a[href^="mailto:"]:hover {
+            background: rgba(0, 102, 204, 0.1);
+            text-decoration: underline !important;
+            transform: translateX(2px);
+        }
+
+        /* APP title link styling */
+        .contact-info a#app-title {
+            transition: all 0.3s ease;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .contact-info a#app-title:hover {
             background: rgba(0, 102, 204, 0.1);
             text-decoration: underline !important;
             transform: translateX(2px);
