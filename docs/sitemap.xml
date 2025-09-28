@@ -1,46 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Default page (legacy support) -->
     <url>
         <loc>https://www.liquicool.hk/</loc>
-        <lastmod>2025-09-25</lastmod>
+        <lastmod>2025-09-28</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/?lang=zh-CN" />
-        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/?lang=zh-HK" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/?lang=en" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/" />
-    </url>
-    <!-- Multilingual URLs for simplified Chinese -->
-    <url>
-        <loc>https://www.liquicool.hk/?lang=zh-CN</loc>
-        <lastmod>2025-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/?lang=zh-CN" />
-        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/?lang=zh-HK" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/?lang=en" />
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 
-    <!-- Multilingual URLs for traditional Chinese -->
+    <!-- Simplified Chinese version (Primary) -->
     <url>
-        <loc>https://www.liquicool.hk/?lang=zh-HK</loc>
-        <lastmod>2025-09-25</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://www.liquicool.hk/zh-cn/</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/?lang=zh-CN" />
-        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/?lang=zh-HK" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 
-    <!-- Multilingual URLs for English -->
+    <!-- Traditional Chinese version -->
     <url>
-        <loc>https://www.liquicool.hk/?lang=en</loc>
-        <lastmod>2025-09-25</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://www.liquicool.hk/zh-hk/</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/?lang=zh-CN" />
-        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/?lang=zh-HK" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
+    </url>
+
+    <!-- English version -->
+    <url>
+        <loc>https://www.liquicool.hk/en/</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 </urlset>

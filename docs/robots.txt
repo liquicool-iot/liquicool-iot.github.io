@@ -9,7 +9,12 @@ Allow: /index.html
 Allow: /logo.svg
 Allow: /aiot.png
 
-# Allow multilingual parameter URLs
+# Allow multilingual directory URLs
+Allow: /zh-cn/
+Allow: /zh-hk/
+Allow: /en/
+
+# Legacy multilingual parameter URLs (for backward compatibility)
 Allow: /*?lang=zh-CN
 Allow: /*?lang=zh-HK
 Allow: /*?lang=en
