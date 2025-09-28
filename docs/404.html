@@ -177,9 +177,23 @@
 
         .language-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: 1fr; /* 默认单列，6x1布局 */
             gap: 20px;
             margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+            /* 中等屏幕使用2x3布局 */
+            .language-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            /* 大屏幕可以选择3x2布局 */
+            .language-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .language-card {
