@@ -13,6 +13,9 @@ Allow: /aiot.png
 Allow: /zh-cn/
 Allow: /zh-hk/
 Allow: /en/
+Allow: /ja/
+Allow: /ko/
+Allow: /ru/
 
 # Legacy multilingual parameter URLs (for backward compatibility)
 Allow: /*?lang=zh-CN

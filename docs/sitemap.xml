@@ -10,6 +10,9 @@
         <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
         <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 
@@ -22,6 +25,9 @@
         <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
         <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 
@@ -34,6 +40,9 @@
         <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
         <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 
@@ -46,6 +55,54 @@
         <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
         <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
+    </url>
+
+    <!-- Japanese version -->
+    <url>
+        <loc>https://www.liquicool.hk/ja/</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
+    </url>
+
+    <!-- Korean version -->
+    <url>
+        <loc>https://www.liquicool.hk/ko/</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
+    </url>
+
+    <!-- Russian version -->
+    <url>
+        <loc>https://www.liquicool.hk/ru/</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.liquicool.hk/zh-cn/" />
+        <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.liquicool.hk/zh-hk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.liquicool.hk/en/" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://www.liquicool.hk/ja/" />
+        <xhtml:link rel="alternate" hreflang="ko" href="https://www.liquicool.hk/ko/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.liquicool.hk/ru/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/zh-cn/" />
     </url>
 </urlset>
