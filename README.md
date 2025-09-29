@@ -29,4 +29,6 @@
 
 [hreflang Tags Testing Tool | TechnicalSEO.com](https://technicalseo.com/tools/hreflang/)
 
+[Favicon检测器 - 测试和验证网站Favicon图标 | Favicon.pub | Favicon.pub](https://favicon.pub/cn/favicon-checker)
+
 
