@@ -1,0 +1,54 @@
+{
+  "name": "立冷科技 - 数据中心液冷解决方案专家",
+  "short_name": "立冷科技",
+  "description": "香港立冷科技LiquiCool专注数据中心液冷解决方案，提供高效节能热管理技术",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "iPad-Touch-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "iPadPro-Touch-167x167.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "Apple-Touch-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "technology", "productivity"],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
