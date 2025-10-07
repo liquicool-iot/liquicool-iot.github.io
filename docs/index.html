@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>页面不存在 - 立冷科技</title>
+    <title data-i18n="page-title">页面不存在 - 立冷科技</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="抱歉，您请求的页面不存在或已被移除。请选择以下语言版本访问立冷科技官方网站。">
-    <meta name="keywords" content="页面不存在,404错误,立冷科技,LiquiCool,数据中心液冷">
+    <meta name="description" data-i18n-content="meta-description" content="抱歉，您请求的页面不存在或已被移除。请选择以下语言版本访问立冷科技官方网站。">
+    <meta name="keywords" content="页面不存在,404错误,立冷科技,LiquiCool,数据中心液冷,Page Not Found,404 Error">
     <meta name="author" content="立冷科技有限公司">
     <meta name="robots" content="noindex, follow">
     <meta name="language" content="zh-CN">
@@ -24,8 +24,8 @@
     <link rel="alternate" hreflang="x-default" href="https://www.liquicool.hk/">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="页面不存在 - 立冷科技">
-    <meta property="og:description" content="抱歉，您请求的页面不存在或已被移除。">
+    <meta property="og:title" data-i18n-content="og-title" content="页面不存在 - 立冷科技">
+    <meta property="og:description" data-i18n-content="og-description" content="抱歉，您请求的页面不存在或已被移除。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.liquicool.hk/404/">
     <meta property="og:image" content="https://www.liquicool.hk/logo.svg">
@@ -123,6 +123,35 @@
         .logo-header img {
             max-height: 60px;
             width: auto;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: 1px solid #e0e0e0;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .lang-btn:hover {
+            background-color: #f8f9fa;
+            border-color: #0066cc;
+            color: #0066cc;
+        }
+
+        .lang-btn.active {
+            background-color: #0066cc;
+            color: white;
+            border-color: #0066cc;
         }
 
         main {
@@ -309,6 +338,15 @@
             .logo-header img {
                 max-height: 50px;
             }
+
+            .language-switcher {
+                gap: 6px;
+            }
+
+            .lang-btn {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -349,23 +387,116 @@
             <a href="https://www.liquicool.hk" class="logo-header" aria-label="返回立冷科技首页">
                 <img src="../logo.svg" alt="立冷科技" width="60" height="60" decoding="async">
             </a>
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="zh-CN">简体</button>
+                <button class="lang-btn" data-lang="zh-TW">繁體</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
         </nav>
     </header>
 
     <main>
         <div class="error-container">
             <div class="error-code">404</div>
-            <h1 class="error-title">页面不存在</h1>
-            <p class="error-description">抱歉，您请求的页面不存在或已被移除。</p>
+            <h1 class="error-title" data-i18n="error-title">页面不存在</h1>
+            <p class="error-description" data-i18n="error-description">抱歉，您请求的页面不存在或已被移除。</p>
 
-            <a href="https://www.liquicool.hk" class="back-home">返回首页</a>
+            <a href="https://www.liquicool.hk" class="back-home" data-i18n="back-home">返回首页</a>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p class="copyright">©2025 立冷科技有限公司 版权所有 | <a href="mailto:xuezhi.qin@liquicool.hk">意见反馈</a></p>
+            <p class="copyright" data-i18n="copyright">©2025 立冷科技有限公司 版权所有 | <a href="mailto:xuezhi.qin@liquicool.hk" data-i18n="feedback">意见反馈</a></p>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            'zh-CN': {
+                'page-title': '网站建设中 - 立冷科技',
+                'meta-description': '立冷科技官方网站正在建设中，敬请期待。',
+                'og-title': '网站建设中 - 立冷科技',
+                'og-description': '立冷科技官方网站正在建设中，敬请期待。',
+                'error-title': '网站建设中',
+                'error-description': '立冷科技官方网站正在建设中，敬请期待。',
+                'back-home': '返回首页',
+                'copyright': '©2025 立冷科技有限公司 版权所有',
+                'feedback': '意见反馈'
+            },
+            'zh-TW': {
+                'page-title': '網站建設中 - 立冷科技',
+                'meta-description': '立冷科技官方網站正在建設中，敬請期待。',
+                'og-title': '網站建設中 - 立冷科技',
+                'og-description': '立冷科技官方網站正在建設中，敬請期待。',
+                'error-title': '網站建設中',
+                'error-description': '立冷科技官方網站正在建設中，敬請期待。',
+                'back-home': '返回首頁',
+                'copyright': '©2025 立冷科技有限公司 版權所有',
+                'feedback': '意見反饋'
+            },
+            'en': {
+                'page-title': 'Website Under Construction - LiquiCool Technology',
+                'meta-description': 'LiquiCool Technology official website is under construction. Stay tuned.',
+                'og-title': 'Website Under Construction - LiquiCool Technology',
+                'og-description': 'LiquiCool Technology official website is under construction. Stay tuned.',
+                'error-title': 'Website Under Construction',
+                'error-description': 'LiquiCool Technology official website is under construction. Stay tuned.',
+                'back-home': 'Back to Home',
+                'copyright': '©2025 LiquiCool Technology Limited. All Rights Reserved',
+                'feedback': 'Feedback'
+            }
+        };
+
+        function getBrowserLanguage() {
+            const lang = navigator.language || navigator.userLanguage;
+            if (lang.startsWith('zh')) {
+                if (lang.includes('TW') || lang.includes('HK') || lang.includes('MO')) {
+                    return 'zh-TW';
+                }
+                return 'zh-CN';
+            } else if (lang.startsWith('en')) {
+                return 'en';
+            }
+            return 'zh-CN';
+        }
+
+        let currentLang = localStorage.getItem('preferred-language') || getBrowserLanguage();
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferred-language', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.title = translations[lang]['page-title'];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta-description']);
+            document.querySelector('meta[property="og:title"]').setAttribute('content', translations[lang]['og-title']);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', translations[lang]['og-description']);
+
+            const copyrightEl = document.querySelector('.copyright');
+            copyrightEl.innerHTML = `${translations[lang]['copyright']} | <a href="mailto:xuezhi.qin@liquicool.hk">${translations[lang]['feedback']}</a>`;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    switchLanguage(btn.getAttribute('data-lang'));
+                });
+            });
+        });
+    </script>
 </body>
 </html>
