@@ -1,8 +1,2 @@
 https://www.liquicool.hk/
-https://www.liquicool.hk/zh/
-https://www.liquicool.hk/zh-cn/
-https://www.liquicool.hk/zh-hk/
-https://www.liquicool.hk/en/
-https://www.liquicool.hk/ja/
-https://www.liquicool.hk/ko/
-https://www.liquicool.hk/ru/
+https://www.liquicool.hk/404.html

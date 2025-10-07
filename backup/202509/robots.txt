@@ -6,10 +6,21 @@ Sitemap: https://www.liquicool.hk/sitemap.xml
 
 # Allow search engines to crawl all content
 Allow: /index.html
-Allow: /404.html
 Allow: /logo.svg
-Allow: /logo.png
-Allow: /favicon.ico
+Allow: /aiot.png
+
+# Allow multilingual directory URLs
+Allow: /zh-cn/
+Allow: /zh-hk/
+Allow: /en/
+Allow: /ja/
+Allow: /ko/
+Allow: /ru/
+
+# Legacy multilingual parameter URLs (for backward compatibility)
+Allow: /*?lang=zh-CN
+Allow: /*?lang=zh-HK
+Allow: /*?lang=en
 
 # Block crawling of any backup or temporary files
 Disallow: *.bak
