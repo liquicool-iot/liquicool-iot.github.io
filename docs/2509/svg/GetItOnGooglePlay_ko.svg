@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="artwork" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 135 40">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #ea4335;
+      }
+
+      .st1 {
+        font-family: GoogleSans-Medium, 'Google Sans';
+      }
+
+      .st2 {
+        letter-spacing: 0em;
+      }
+
+      .st2, .st3 {
+        font-family: NotoSansKR-Medium, 'Noto Sans KR';
+      }
+
+      .st4 {
+        fill: #a6a6a6;
+      }
+
+      .st5 {
+        fill: #fbbc04;
+      }
+
+      .st6 {
+        fill: #4285f4;
+      }
+
+      .st7 {
+        fill: #34a853;
+      }
+
+      .st3 {
+        font-size: 8.7px;
+      }
+
+      .st3, .st8 {
+        fill: #fff;
+        font-weight: 500;
+      }
+
+      .st8 {
+        font-size: 11.5px;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect width="135" height="40" rx="5" ry="5"/>
+    <path class="st4" d="M130,.8c2.32,0,4.2,1.88,4.2,4.2v30c0,2.32-1.88,4.2-4.2,4.2H5c-2.32,0-4.2-1.88-4.2-4.2V5C.8,2.68,2.68.8,5,.8h125M130,0H5C2.25,0,0,2.25,0,5v30c0,2.75,2.25,5,5,5h125c2.75,0,5-2.25,5-5V5C135,2.25,132.75,0,130,0h0Z"/>
+    <g>
+      <path class="st0" d="M20.72,19.42l-10.65,11.3s0,0,0,0c.33,1.23,1.45,2.13,2.78,2.13.53,0,1.03-.14,1.46-.4l.03-.02,11.98-6.91-5.61-6.11Z"/>
+      <path class="st5" d="M31.49,17.5h-.01s-5.17-3.01-5.17-3.01l-5.83,5.19,5.85,5.85,5.15-2.97c.9-.49,1.51-1.44,1.51-2.53s-.6-2.04-1.5-2.52Z"/>
+      <path class="st6" d="M10.07,9.28c-.06.24-.1.48-.1.74v19.97c0,.26.03.5.1.74l11.01-11.01-11.01-10.44Z"/>
+      <path class="st7" d="M20.8,20l5.51-5.51-11.97-6.94c-.43-.26-.94-.41-1.49-.41-1.33,0-2.45.91-2.78,2.13,0,0,0,0,0,0l10.73,10.72Z"/>
+    </g>
+  </g>
+  <text class="st8" transform="translate(40.25 17.13)"><tspan class="st1" x="0" y="0">Google Play</tspan><tspan class="st2" x="64.43" y="0">에서</tspan></text>
+  <text class="st3" transform="translate(40.15 30.96)"><tspan x="0" y="0">다운로드</tspan></text>
+</svg>
