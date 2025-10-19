@@ -93,75 +93,247 @@
             }
         }
 
+        /* Header */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 2rem 0;
+            margin: 0;
         }
 
         .logo-header {
             display: flex;
             align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0066cc;
+            padding: 20px 0;
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 102, 204, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .logo-header:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+            background: rgba(0, 102, 204, 0.05);
+        }
+
+        .logo-header:hover::before {
+            left: 100%;
+        }
+
+        .logo-header:active {
+            transform: translateY(0) scale(1);
         }
 
         .logo-header img {
-            max-height: 60px;
-            width: auto;
-        }
-
-        .language-switcher {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .lang-btn {
-            padding: 6px 12px;
-            border: 1px solid #e0e0e0;
-            background-color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
+            height: 60px;
+            margin-right: 15px;
             transition: all 0.3s ease;
-            font-size: 13px;
-            color: #666;
-            min-width: 50px;
-            text-align: center;
         }
 
-        .lang-btn:hover {
-            background-color: #f8f9fa;
-            border-color: #0066cc;
+        .logo-header:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #0066cc;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
             color: #0066cc;
+            background: rgba(0, 102, 204, 0.05);
         }
 
-        .lang-btn.active {
-            background-color: #0066cc;
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Language Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background: #0066cc;
             color: white;
-            border-color: #0066cc;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
         }
 
+        .dropbtn:not(:hover) {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        .dropbtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .dropbtn:hover {
+            background: #0052a3;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+        }
+
+        .dropbtn:hover::before {
+            left: 100%;
+        }
+
+        .dropbtn:active {
+            transform: translateY(0) scale(1.02);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 140px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .dropdown-content.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-content button {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .dropdown-content button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 102, 204, 0.1), rgba(0, 102, 204, 0.05));
+            transition: width 0.3s ease;
+        }
+
+        .dropdown-content button:hover {
+            background: rgba(0, 102, 204, 0.08);
+            color: #0066cc;
+            transform: translateX(4px);
+        }
+
+        .dropdown-content button:hover::before {
+            width: 100%;
+        }
+
+        .dropdown-content button:first-child {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .dropdown-content button:last-child {
+            border-radius: 0 0 10px 10px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* Main Content */
         main {
+            margin-top: 0;
+            padding-top: 160px;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 0;
+            padding-bottom: 60px;
         }
 
         .error-container {
@@ -290,25 +462,37 @@
             background-color: #0052a3;
         }
 
+        /* Footer */
         footer {
-            background-color: #f8f9fa;
-            padding: 30px 0;
-            border-top: 1px solid #e0e0e0;
+            background: #333;
+            color: white;
             text-align: center;
+            padding: 2rem 0;
         }
 
         .copyright {
-            color: #666;
+            color: white;
             font-size: 14px;
         }
 
-        .copyright a {
+        footer a {
             color: #0066cc;
             text-decoration: none;
         }
 
-        .copyright a:hover {
+        footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1000px) {
+            .nav-links {
+                display: none;
+            }
+
+            main {
+                padding-top: 180px;
+            }
         }
 
         /* Responsive design */
@@ -339,15 +523,6 @@
 
             .logo-header img {
                 max-height: 50px;
-            }
-
-            .language-switcher {
-                gap: 6px;
-            }
-
-            .lang-btn {
-                padding: 5px 10px;
-                font-size: 12px;
             }
         }
 
@@ -389,10 +564,20 @@
             <a href="https://www.liquicool.hk" class="logo-header" aria-label="返回立冷科技首页">
                 <img src="../logo.svg" alt="立冷科技" width="60" height="60" decoding="async">
             </a>
-            <div class="language-switcher">
-                <button class="lang-btn" data-lang="zh-CN">简体</button>
-                <button class="lang-btn" data-lang="zh-TW">繁體</button>
-                <button class="lang-btn" data-lang="en">EN</button>
+            <ul class="nav-links" role="navigation" aria-label="主导航菜单">
+                <li><a href="https://www.liquicool.hk#home" id="nav-home" aria-label="回到首页" data-i18n="nav-home">首页</a></li>
+                <li><a href="https://www.liquicool.hk#about" id="nav-about" aria-label="了解公司简介" data-i18n="nav-about">公司简介</a></li>
+                <li><a href="https://www.liquicool.hk#technology" id="nav-tech" aria-label="查看核心技术" data-i18n="nav-tech">核心技术</a></li>
+                <li><a href="https://www.liquicool.hk#awards" id="nav-awards" aria-label="查看荣誉奖项" data-i18n="nav-awards">荣誉奖项</a></li>
+                <li><a href="https://www.liquicool.hk#contact" id="nav-contact" aria-label="联系我们" data-i18n="nav-contact">联系我们</a></li>
+            </ul>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" onmouseenter="showDropdown()" onmouseleave="hideDropdown()" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-label="选择语言">繁/简/EN ▼</button>
+                <div id="myDropdown" class="dropdown-content" role="menu" aria-labelledby="language-selector" onmouseenter="keepDropdownOpen()" onmouseleave="hideDropdown()">
+                    <button onclick="setLanguage('zh-CN')" role="menuitem">简体中文</button>
+                    <button onclick="setLanguage('zh-HK')" role="menuitem">繁體中文</button>
+                    <button onclick="setLanguage('en')" role="menuitem">English</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -420,17 +605,27 @@
                 'meta-description': '抱歉，您请求的页面不存在或已被移除。',
                 'og-title': '页面不存在 - 立冷科技',
                 'og-description': '抱歉，您请求的页面不存在或已被移除。',
+                'nav-home': '首页',
+                'nav-about': '公司简介',
+                'nav-tech': '核心技术',
+                'nav-awards': '荣誉奖项',
+                'nav-contact': '联系我们',
                 'error-title': '页面不存在',
                 'error-description': '抱歉，您请求的页面不存在或已被移除。',
                 'back-home': '返回首页',
                 'copyright': '©2025 立冷科技有限公司 版权所有',
                 'feedback': '意见反馈'
             },
-            'zh-TW': {
+            'zh-HK': {
                 'page-title': '頁面不存在 - 立冷科技',
                 'meta-description': '抱歉，您請求的頁面不存在或已被移除。',
                 'og-title': '頁面不存在 - 立冷科技',
                 'og-description': '抱歉，您請求的頁面不存在或已被移除。',
+                'nav-home': '首頁',
+                'nav-about': '公司簡介',
+                'nav-tech': '核心技術',
+                'nav-awards': '榮譽獎項',
+                'nav-contact': '聯絡我們',
                 'error-title': '頁面不存在',
                 'error-description': '抱歉，您請求的頁面不存在或已被移除。',
                 'back-home': '返回首頁',
@@ -442,6 +637,11 @@
                 'meta-description': 'Sorry, the page you requested does not exist or has been removed.',
                 'og-title': 'Page Not Found - LiquiCool Technology',
                 'og-description': 'Sorry, the page you requested does not exist or has been removed.',
+                'nav-home': 'Home',
+                'nav-about': 'About Us',
+                'nav-tech': 'Technology',
+                'nav-awards': 'Awards',
+                'nav-contact': 'Contact',
                 'error-title': 'Page Not Found',
                 'error-description': 'Sorry, the page you requested does not exist or has been removed.',
                 'back-home': 'Back to Home',
@@ -454,7 +654,7 @@
             const lang = navigator.language || navigator.userLanguage;
             if (lang.startsWith('zh')) {
                 if (lang.includes('TW') || lang.includes('HK') || lang.includes('MO')) {
-                    return 'zh-TW';
+                    return 'zh-HK';
                 }
                 return 'zh-CN';
             } else if (lang.startsWith('en')) {
@@ -463,11 +663,11 @@
             return 'zh-CN';
         }
 
-        let currentLang = localStorage.getItem('preferred-language') || getBrowserLanguage();
+        let currentLang = localStorage.getItem('preferredLang') || getBrowserLanguage();
 
-        function switchLanguage(lang) {
+        function setLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('preferred-language', lang);
+            localStorage.setItem('preferredLang', lang);
             document.documentElement.lang = lang;
 
             document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -485,19 +685,71 @@
             const copyrightEl = document.querySelector('.copyright');
             copyrightEl.innerHTML = `${translations[lang]['copyright']} | <a href="mailto:xuezhi.qin@liquicool.hk">${translations[lang]['feedback']}</a>`;
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-            });
+            document.getElementById("myDropdown").classList.remove("show");
+        }
+
+        let hoverTimer = null;
+        let leaveTimer = null;
+
+        function showDropdown() {
+            clearTimeout(leaveTimer);
+            hoverTimer = setTimeout(() => {
+                const dropdown = document.getElementById("myDropdown");
+                dropdown.style.display = "block";
+                setTimeout(() => {
+                    dropdown.classList.add("show");
+                }, 10);
+            }, 200);
+        }
+
+        function hideDropdown() {
+            clearTimeout(hoverTimer);
+            leaveTimer = setTimeout(() => {
+                const dropdown = document.getElementById("myDropdown");
+                dropdown.classList.remove("show");
+                setTimeout(() => {
+                    dropdown.style.display = "none";
+                }, 300);
+            }, 200);
+        }
+
+        function keepDropdownOpen() {
+            clearTimeout(leaveTimer);
+            clearTimeout(hoverTimer);
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("myDropdown");
+            if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+                setTimeout(() => {
+                    dropdown.style.display = "none";
+                }, 300);
+            } else {
+                dropdown.style.display = "block";
+                setTimeout(() => {
+                    dropdown.classList.add("show");
+                }, 10);
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                        setTimeout(() => {
+                            openDropdown.style.display = "none";
+                        }, 300);
+                    }
+                }
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            switchLanguage(currentLang);
-
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    switchLanguage(btn.getAttribute('data-lang'));
-                });
-            });
+            setLanguage(currentLang);
         });
     </script>
 </body>
